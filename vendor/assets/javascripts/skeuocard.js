@@ -52,7 +52,7 @@
         initialValues: {},
         validationState: {},
         strings: {
-          hiddenFaceFillPrompt: "<strong>Clique aqui</strong> para <br>virar o lado.",
+          hiddenFaceFillPrompt: "<strong>Clique aqui</strong> para <br>virar o cartão.",
           hiddenFaceErrorWarning: "Há um problema do outro lado.",
           hiddenFaceSwitchPrompt: "Esqueceu de algo?<br> Vire o cartão."
         }
