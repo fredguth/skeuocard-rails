@@ -408,7 +408,7 @@
       this._inputViews.number.setGroupings((product != null ? product.attrs.cardNumberGrouping : void 0) || [this.options.genericPlaceholder.length]);
       if (product != null) {
         this._inputViews.exp.reconfigure({
-          pattern: (product != null ? product.attrs.expirationFormat : void 0) || "MM/YY"
+          pattern: (product != null ? product.attrs.expirationFormat : void 0) || "MM/AA"
         });
         this._inputViews.cvc.attr({
           maxlength: product.attrs.cvcLength,
@@ -983,7 +983,7 @@
       if (opts == null) {
         opts = {};
       }
-      opts.pattern || (opts.pattern = "MM/YY");
+      opts.pattern || (opts.pattern = "MM/AA");
       this.options = opts;
       this.date = null;
       this.el = $("<fieldset>");
@@ -1522,7 +1522,7 @@
     companyShortname: "dinersclubintl",
     cardNumberGrouping: [4, 6, 4],
     cardNumberLength: [14],
-    expirationFormat: "MM/YY",
+    expirationFormat: "MM/AA",
     cvcLength: 3,
     validateLuhn: true,
     layout: {
@@ -1539,7 +1539,7 @@
     companyShortname: "jcb",
     cardNumberGrouping: [4, 4, 4, 4],
     cardNumberLength: [16],
-    expirationFormat: "MM/'YY",
+    expirationFormat: "MM/'AA",
     cvcLength: 3,
     validateLuhn: true,
     layout: {
@@ -1556,7 +1556,7 @@
     companyShortname: "amex",
     cardNumberGrouping: [4, 6, 5],
     cardNumberLength: [15],
-    expirationFormat: "MM/YY",
+    expirationFormat: "MM/AA",
     cvcLength: 4,
     validateLuhn: true,
     layout: {
@@ -1573,7 +1573,7 @@
     companyShortname: "laser",
     cardNumberGrouping: [4, 4, 4, 4],
     cardNumberLength: [16, 17, 18, 19],
-    expirationFormat: "MM/YY",
+    expirationFormat: "MM/AA",
     validateLuhn: true,
     cvcLength: 3,
     layout: {
@@ -1590,7 +1590,7 @@
     companyShortname: "visa",
     cardNumberGrouping: [4, 4, 4, 4],
     cardNumberLength: [13, 14, 15, 16],
-    expirationFormat: "MM/YY",
+    expirationFormat: "MM/AA",
     validateLuhn: true,
     cvcLength: 3,
     layout: {
@@ -1607,7 +1607,7 @@
     companyShortname: "unionpay",
     cardNumberGrouping: [19],
     cardNumberLength: [16, 17, 18, 19],
-    expirationFormat: "MM/YY",
+    expirationFormat: "MM/AA",
     validateLuhn: false,
     cvcLength: 3,
     layout: {
@@ -1624,7 +1624,7 @@
     companyShortname: "mastercard",
     cardNumberGrouping: [4, 4, 4, 4],
     cardNumberLength: [16],
-    expirationFormat: "MM/YY",
+    expirationFormat: "MM/AA",
     validateLuhn: true,
     cvcLength: 3,
     layout: {
@@ -1641,7 +1641,7 @@
     companyShortname: "maestro",
     cardNumberGrouping: [4, 4, 4, 4],
     cardNumberLength: [12, 13, 14, 15, 16, 17, 18, 19],
-    expirationFormat: "MM/YY",
+    expirationFormat: "MM/AA",
     validateLuhn: true,
     cvcLength: 3,
     layout: {
@@ -1658,7 +1658,7 @@
     companyShortname: "discover",
     cardNumberGrouping: [4, 4, 4, 4],
     cardNumberLength: [16],
-    expirationFormat: "MM/YY",
+    expirationFormat: "MM/AA",
     validateLuhn: true,
     cvcLength: 3,
     layout: {
