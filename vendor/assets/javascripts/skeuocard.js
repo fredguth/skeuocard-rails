@@ -1,8 +1,8 @@
 /*
 "Skeuocard" -- A Skeuomorphic Credit-Card Input Enhancement
-@description Skeuocard is a skeuomorphic credit card input plugin, supporting 
-             progressive enhancement. It renders a credit-card input which 
-             behaves similarly to a physical credit card.
+@description Skeuocard is a skeuomorphic credit card input plugin, supporting
+progressive enhancement. It renders a credit-card input which
+behaves similarly to a physical credit card.
 @author Ken Keiter <ken@kenkeiter.com>
 @updated 2013-07-25
 @website http://kenkeiter.com/
@@ -52,9 +52,9 @@
         initialValues: {},
         validationState: {},
         strings: {
-          hiddenFaceFillPrompt: "<strong>Clique aqui</strong> para <br>virar o cartão.",
-          hiddenFaceErrorWarning: "Há um problema do outro lado.",
-          hiddenFaceSwitchPrompt: "Esqueceu de algo?<br> Vire o cartão."
+          hiddenFaceFillPrompt: "<strong>Click here</strong> to <br>fill in the other side.",
+          hiddenFaceErrorWarning: "There's a problem on the other side.",
+          hiddenFaceSwitchPrompt: "Forget something?<br> Flip the card over."
         }
       };
       this.options = $.extend(optDefaults, opts);
@@ -87,9 +87,9 @@
     };
 
     /*
-    Transform the elements within the container, conforming the DOM so that it 
-    becomes styleable, and that the underlying inputs are hidden.
-    */
+Transform the elements within the container, conforming the DOM so that it
+becomes styleable, and that the underlying inputs are hidden.
+*/
 
 
     Skeuocard.prototype._conformDOM = function() {
@@ -152,55 +152,54 @@
     };
 
     /*
-    Import implicit initialization options from the DOM. Brings in things like 
-    the accepted card type, initial validation state, existing values, etc.
-    */
+Import implicit initialization options from the DOM. Brings in things like
+the accepted card type, initial validation state, existing values, etc.
+*/
 
 
     Skeuocard.prototype._importImplicitOptions = function() {
-      // var fieldEl, fieldName, _initialExp, _ref,
-      //   _this = this;
-      // _ref = this.el.underlyingFields;
-      // for (fieldName in _ref) {
-      //   fieldEl = _ref[fieldName];
-      //   if (this.options.initialValues[fieldName] == null) {
-      //     this.options.initialValues[fieldName] = fieldEl.val();
-      //   } else {
-      //     this.options.initialValues[fieldName] = this.options.initialValues[fieldName].toString();
-      //     this._setUnderlyingValue(fieldName, this.options.initialValues[fieldName]);
-      //   }
-      //   if ((this.options.initialValues[fieldName])&&(this.options.initialValues[fieldName].length > 0)) {
-      //     this._state['initiallyFilled'] = true;
-      //   }
-      //   if (this.options.validationState[fieldName] == null) {
-      //     this.options.validationState[fieldName] = !fieldEl.hasClass('invalid');
-      //   }
-      // }
-      // if (this.options.acceptedCardProducts == null) {
-      //   this.options.acceptedCardProducts = [];
-      //   this.el.underlyingFields.type.find('option').each(function(i, _el) {
-      //     var el, shortname;
-      //     el = $(_el);
-      //     shortname = el.attr('data-sc-type') || el.attr('value');
-      //     return _this.options.acceptedCardProducts.push(shortname);
-      //   });
-      // }
-      // if (this.options.initialValues.number.length > 0) {
-      //   this.set('number', this.options.initialValues.number);
-      // }
-      // if (this.options.initialValues.name.length > 0) {
-      //   this.set('name', this.options.initialValues.name);
-      // }
-      // if (this.options.initialValues.cvc.length > 0) {
-      //   this.set('cvc', this.options.initialValues.cvc);
-      // }
-      // if (this.options.initialValues.expYear.length > 0 && this.options.initialValues.expMonth.length > 0) {
-      //   _initialExp = new Date(parseInt(this.options.initialValues.expYear), parseInt(this.options.initialValues.expMonth) - 1, 1);
-      //   this.set('exp', _initialExp);
-      // }
-      // this._updateValidationForFace('front');
-      // return this._updateValidationForFace('back');
-  
+      var fieldEl, fieldName, _initialExp, _ref,
+        _this = this;
+      _ref = this.el.underlyingFields;
+      for (fieldName in _ref) {
+        fieldEl = _ref[fieldName];
+        if (this.options.initialValues[fieldName] == null) {
+          this.options.initialValues[fieldName] = fieldEl.val();
+        } else {
+          this.options.initialValues[fieldName] = this.options.initialValues[fieldName].toString();
+          this._setUnderlyingValue(fieldName, this.options.initialValues[fieldName]);
+        }
+        if (this.options.initialValues[fieldName].length > 0) {
+          this._state['initiallyFilled'] = true;
+        }
+        if (this.options.validationState[fieldName] == null) {
+          this.options.validationState[fieldName] = !fieldEl.hasClass('invalid');
+        }
+      }
+      if (this.options.acceptedCardProducts == null) {
+        this.options.acceptedCardProducts = [];
+        this.el.underlyingFields.type.find('option').each(function(i, _el) {
+          var el, shortname;
+          el = $(_el);
+          shortname = el.attr('data-sc-type') || el.attr('value');
+          return _this.options.acceptedCardProducts.push(shortname);
+        });
+      }
+      if (this.options.initialValues.number.length > 0) {
+        this.set('number', this.options.initialValues.number);
+      }
+      if (this.options.initialValues.name.length > 0) {
+        this.set('name', this.options.initialValues.name);
+      }
+      if (this.options.initialValues.cvc.length > 0) {
+        this.set('cvc', this.options.initialValues.cvc);
+      }
+      if (this.options.initialValues.expYear.length > 0 && this.options.initialValues.expMonth.length > 0) {
+        _initialExp = new Date(parseInt(this.options.initialValues.expYear), parseInt(this.options.initialValues.expMonth) - 1, 1);
+        this.set('exp', _initialExp);
+      }
+      this._updateValidationForFace('front');
+      return this._updateValidationForFace('back');
     };
 
     Skeuocard.prototype.set = function(field, newValue) {
@@ -209,8 +208,8 @@
     };
 
     /*
-    Bind interaction events to their appropriate handlers.
-    */
+Bind interaction events to their appropriate handlers.
+*/
 
 
     Skeuocard.prototype._bindInputEvents = function() {
@@ -387,9 +386,9 @@
     };
 
     /*
-    Assert rendering changes necessary for the current product. Passing a null 
-    value instead of a product will revert the card to a generic state.
-    */
+Assert rendering changes necessary for the current product. Passing a null
+value instead of a product will revert the card to a generic state.
+*/
 
 
     Skeuocard.prototype._renderProduct = function(product) {
@@ -515,10 +514,10 @@
   window.Skeuocard = Skeuocard;
 
   /*
-  Skeuocard::FlipTabView
-  Handles rendering of the "flip button" control and its various warning and 
-  prompt states.
-  */
+Skeuocard::FlipTabView
+Handles rendering of the "flip button" control and its various warning and
+prompt states.
+*/
 
 
   Skeuocard.prototype.FlipTabView = (function() {
@@ -604,9 +603,9 @@
   })();
 
   /*
-  # Skeuocard::SegmentedCardNumberInputView
-  # Provides a reconfigurable segmented input view for credit card numbers.
-  */
+# Skeuocard::SegmentedCardNumberInputView
+# Provides a reconfigurable segmented input view for credit card numbers.
+*/
 
 
   Skeuocard.prototype.SegmentedCardNumberInputView = (function() {
@@ -974,8 +973,8 @@
   })();
 
   /*
-  Skeuocard::ExpirationInputView
-  */
+Skeuocard::ExpirationInputView
+*/
 
 
   Skeuocard.prototype.ExpirationInputView = (function() {
@@ -1243,8 +1242,8 @@
   })();
 
   /*
-  Skeuocard::TextInputView
-  */
+Skeuocard::TextInputView
+*/
 
 
   Skeuocard.prototype.TextInputView = (function() {
@@ -1314,8 +1313,8 @@
   })();
 
   /*
-  Skeuocard::CardProduct
-  */
+Skeuocard::CardProduct
+*/
 
 
   Skeuocard.prototype.CardProduct = (function() {
@@ -1513,8 +1512,8 @@
   })();
 
   /*
-  # Seed CardProducts.
-  */
+# Seed CardProducts.
+*/
 
 
   Skeuocard.prototype.CardProduct.create({
