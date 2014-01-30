@@ -169,7 +169,7 @@
           this.options.initialValues[fieldName] = this.options.initialValues[fieldName].toString();
           this._setUnderlyingValue(fieldName, this.options.initialValues[fieldName]);
         }
-        if (this.options.initialValues[fieldName].length > 0) {
+        if ((this.options.initialValues[fieldName])&&(this.options.initialValues[fieldName].length > 0)) {
           this._state['initiallyFilled'] = true;
         }
         if (this.options.validationState[fieldName] == null) {
