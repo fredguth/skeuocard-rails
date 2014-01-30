@@ -158,48 +158,49 @@
 
 
     Skeuocard.prototype._importImplicitOptions = function() {
-      var fieldEl, fieldName, _initialExp, _ref,
-        _this = this;
-      _ref = this.el.underlyingFields;
-      for (fieldName in _ref) {
-        fieldEl = _ref[fieldName];
-        if (this.options.initialValues[fieldName] == null) {
-          this.options.initialValues[fieldName] = fieldEl.val();
-        } else {
-          this.options.initialValues[fieldName] = this.options.initialValues[fieldName].toString();
-          this._setUnderlyingValue(fieldName, this.options.initialValues[fieldName]);
-        }
-        if ((this.options.initialValues[fieldName])&&(this.options.initialValues[fieldName].length > 0)) {
-          this._state['initiallyFilled'] = true;
-        }
-        if (this.options.validationState[fieldName] == null) {
-          this.options.validationState[fieldName] = !fieldEl.hasClass('invalid');
-        }
-      }
-      if (this.options.acceptedCardProducts == null) {
-        this.options.acceptedCardProducts = [];
-        this.el.underlyingFields.type.find('option').each(function(i, _el) {
-          var el, shortname;
-          el = $(_el);
-          shortname = el.attr('data-sc-type') || el.attr('value');
-          return _this.options.acceptedCardProducts.push(shortname);
-        });
-      }
-      if (this.options.initialValues.number.length > 0) {
-        this.set('number', this.options.initialValues.number);
-      }
-      if (this.options.initialValues.name.length > 0) {
-        this.set('name', this.options.initialValues.name);
-      }
-      if (this.options.initialValues.cvc.length > 0) {
-        this.set('cvc', this.options.initialValues.cvc);
-      }
-      if (this.options.initialValues.expYear.length > 0 && this.options.initialValues.expMonth.length > 0) {
-        _initialExp = new Date(parseInt(this.options.initialValues.expYear), parseInt(this.options.initialValues.expMonth) - 1, 1);
-        this.set('exp', _initialExp);
-      }
-      this._updateValidationForFace('front');
-      return this._updateValidationForFace('back');
+      // var fieldEl, fieldName, _initialExp, _ref,
+      //   _this = this;
+      // _ref = this.el.underlyingFields;
+      // for (fieldName in _ref) {
+      //   fieldEl = _ref[fieldName];
+      //   if (this.options.initialValues[fieldName] == null) {
+      //     this.options.initialValues[fieldName] = fieldEl.val();
+      //   } else {
+      //     this.options.initialValues[fieldName] = this.options.initialValues[fieldName].toString();
+      //     this._setUnderlyingValue(fieldName, this.options.initialValues[fieldName]);
+      //   }
+      //   if ((this.options.initialValues[fieldName])&&(this.options.initialValues[fieldName].length > 0)) {
+      //     this._state['initiallyFilled'] = true;
+      //   }
+      //   if (this.options.validationState[fieldName] == null) {
+      //     this.options.validationState[fieldName] = !fieldEl.hasClass('invalid');
+      //   }
+      // }
+      // if (this.options.acceptedCardProducts == null) {
+      //   this.options.acceptedCardProducts = [];
+      //   this.el.underlyingFields.type.find('option').each(function(i, _el) {
+      //     var el, shortname;
+      //     el = $(_el);
+      //     shortname = el.attr('data-sc-type') || el.attr('value');
+      //     return _this.options.acceptedCardProducts.push(shortname);
+      //   });
+      // }
+      // if (this.options.initialValues.number.length > 0) {
+      //   this.set('number', this.options.initialValues.number);
+      // }
+      // if (this.options.initialValues.name.length > 0) {
+      //   this.set('name', this.options.initialValues.name);
+      // }
+      // if (this.options.initialValues.cvc.length > 0) {
+      //   this.set('cvc', this.options.initialValues.cvc);
+      // }
+      // if (this.options.initialValues.expYear.length > 0 && this.options.initialValues.expMonth.length > 0) {
+      //   _initialExp = new Date(parseInt(this.options.initialValues.expYear), parseInt(this.options.initialValues.expMonth) - 1, 1);
+      //   this.set('exp', _initialExp);
+      // }
+      // this._updateValidationForFace('front');
+      // return this._updateValidationForFace('back');
+  
     };
 
     Skeuocard.prototype.set = function(field, newValue) {
