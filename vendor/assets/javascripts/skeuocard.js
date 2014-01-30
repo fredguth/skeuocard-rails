@@ -52,9 +52,9 @@ behaves similarly to a physical credit card.
         initialValues: {},
         validationState: {},
         strings: {
-          hiddenFaceFillPrompt: "<strong>Clique aqui</strong> para <br>ver o outro lado.",
-          hiddenFaceErrorWarning: "Há um problema do outro lado.",
-          hiddenFaceSwitchPrompt: "Esqueceu algo?<br> Vire o cartão."
+          hiddenFaceFillPrompt: "<strong>Click here</strong> to <br>fill in the other side.",
+          hiddenFaceErrorWarning: "There's a problem on the other side.",
+          hiddenFaceSwitchPrompt: "Forget something?<br> Flip the card over."
         }
       };
       this.options = $.extend(optDefaults, opts);
