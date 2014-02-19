@@ -134,7 +134,7 @@ becomes styleable, and that the underlying inputs are hidden.
         }),
         name: new this.TextInputView({
           "class": "cc-name",
-          placeholder: "YOUR NAME"
+          placeholder: "SEU NOME"
         }),
         cvc: new this.TextInputView({
           "class": "cc-cvc",
